@@ -9,7 +9,7 @@ export const Top = styled.div`
   background: ${style["theme-color"]};
   & > span {
     line-height: 40px;
-    color: $f1f1f1;
+    color: white;
     font-size: 20px;
     &.iconfont {
       font-size: 25px;
@@ -29,6 +29,14 @@ export const Tab = styled.div`
     padding: 2px 0;
     font-size: 14px;
     color: white;
+    &.selected {
+      span {
+        padding: 3px 0;
+        font-weight: 700;
+        color: #f1f1f1;
+        border-bottom: 2px solid #f1f1f1;
+      }
+    }
   }
 `;
 
