@@ -4,9 +4,9 @@ import { SliderContainer } from "./style";
 import "swiper/css/swiper.css";
 function Slider(props) {
   const [sliderSwiper, setSliderSwiper] = useState(null);
-  const { banerList } = props;
+  const { bannerList } = props;
   useEffect(() => {
-    if (banerList.length && !sliderSwiper) {
+    if (bannerList.length && !sliderSwiper) {
       let newSliderSwiper = new Swiper(".slider-container", {
         loop: true,
         autoplay: {
@@ -17,18 +17,18 @@ function Slider(props) {
       });
       setSliderSwiper(newSliderSwiper);
     }
-  }, [banerList.length, sliderSwiper]);
+  }, [bannerList.length, sliderSwiper]);
   return (
     <SliderContainer>
       <div className="before"></div>
       <div className="slider-container">
         <div className="swiper-wrapper">
-          {banerList.map(slider => {
+          {bannerList.map(slider => {
             return (
-              <div className="swiper-slide" key={slider.id}>
+              <div className="swiper-slide" key={slider.imageUrl}>
                 <div className="slider-nav">
                   <img
-                    src={slider.imgUrl}
+                    src={slider.imageUrl}
                     width="100%"
                     height="100%"
                     alt="推荐"
